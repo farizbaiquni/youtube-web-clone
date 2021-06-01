@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import {lazy, Suspense} from 'react'
 
 function App() {
+
+   const Dashboard = lazy(() => import('./pages/Dashboard'))
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Suspense fallback={<h2>Loading...</h2>} >
+        <Dashboard />
+      </Suspense>
     </div>
   );
 }
