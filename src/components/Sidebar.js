@@ -8,7 +8,7 @@ function Sidebar({isNormal}) {
         w-56
         lg-max:w-20 
         sm-max:hidden
-        ${!isNormal || isNormal == undefined? "hidden" : ""}
+        ${!isNormal || isNormal === undefined? "hidden" : ""}
         `
         }>
 

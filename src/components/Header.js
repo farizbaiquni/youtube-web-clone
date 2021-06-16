@@ -12,19 +12,19 @@ function Header({ isNormal, setIsNormal, isMini, setIsMini, isFull, setIsFull, s
 
                         setIsNormal(!isNormal)
 
-                        if(isMini == true  && isNormal == false){
+                        if(isMini === true  && isNormal === false){
                             setIsMini(false)
                         }
 
-                        if(isFull == true  && isNormal == false){
+                        if(isFull === true  && isNormal === false){
                             setIsFull(false)
                         }
 
-                        if(window.innerWidth > 1023 && isNormal == true && isFull == false){
+                        if(window.innerWidth > 1023 && isNormal === true && isFull === false){
                             setIsMini(!isMini)
                         } 
 
-                        if(window.innerWidth < 1023 && isNormal == true && isMini == false){
+                        if(window.innerWidth < 1023 && isNormal === true && isMini === false){
                             setIsFull(!isFull)
                         }
                     }}

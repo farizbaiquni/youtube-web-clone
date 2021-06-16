@@ -5,6 +5,8 @@ module.exports = {
       extend: {
         // Adds a new breakpoint in addition to the default breakpoints
         spacing: {
+          'thumbnails-width' : '360px',
+          'thumbnails-height' : '480px'
         }, 
   
         screens: {
