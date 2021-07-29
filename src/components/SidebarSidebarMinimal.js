@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function SidebarMinimal({sidebar, sidebarClick, isMini}) {
+function SidebarMinimal({sidebar, sidebarClick, isMinimal}) {
     return (
         <div className={`sidebar flex flex-col h-96 fixed top-14 h-full overflow-x-hidden z-10 left-0 bg-blue-500
-            ${!isMini ? "hidden" : ""}
+            ${!isMinimal ? "hidden" : ""}
             w-20
             lg-max:w-20
             sm-max:hidden
@@ -41,7 +41,7 @@ function SidebarMinimal({sidebar, sidebarClick, isMini}) {
 SidebarMinimal.propTypes = {
     sidebar: PropTypes.string,
     sidebarClick: PropTypes.bool,
-    isMini: PropTypes.bool,
+    isMinimal: PropTypes.bool,
 }
 
 export default SidebarMinimal

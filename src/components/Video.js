@@ -49,8 +49,8 @@ function Video({data}) {
     // console.log(data)
 
     return (
-        <div className="flex flex-col w-full">
-            <img src={data.snippet.thumbnails?.medium?.url} alt="" className={" w-80r"}/>
+        <div className="flex md:flex-col w-full">
+            <img src={data.snippet.thumbnails?.medium?.url} alt="" className={" w-80 "}/>
             {/* <iframe className="w-full"
                 src="https://www.youtube.com/embed/tgbNymZ7vqY">
             </iframe> */}
@@ -61,7 +61,7 @@ function Video({data}) {
                     className=" w-10 h-10 object-cover rounded rounded-full mx-2"
                     />
                 <div className="flex flex-col">
-                    <div id="video__title" className="font-semibold break-all"
+                    <div id="video__title" className="font-semibold break-words"
                     > {data.snippet.title}</div>
                     <h2 className="text-sm">{data.snippet.channelTitle}</h2>
                     <h3 className="text-sm"> {totalView} {numberText} {totalView <= 1 ? 'view' : 'views' }</h3>

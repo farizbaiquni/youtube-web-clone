@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useHistory, Link} from 'react-router-dom'
-import * as ROUTES from '../constans/routes'
+import * as ROUTES from '../../constans/routes'
 
-function Header({ isNormal, setIsNormal, isMinimal, setIsMinimal, isFull, setIsFull}) {
+function HeaderWatch({ showSidebar, setShowSidebar}) {
 
     const history = useHistory();
     const[keyword, setKeyword] = useState("");
@@ -21,24 +21,7 @@ function Header({ isNormal, setIsNormal, isMinimal, setIsMinimal, isFull, setIsF
             <div className="flex items-center mr-10 w-40">
                 <div className="mr-5 cursor-pointer" 
                     onClick={() => {
-
-                        setIsNormal(!isNormal)
-
-                        if(isMinimal === true  && isNormal === false){
-                            setIsMinimal(false)
-                        }
-
-                        if(isFull === true  && isNormal === false){
-                            setIsFull(false)
-                        }
-
-                        if(window.innerWidth > 1023 && isNormal === true && isFull === false){
-                            setIsMinimal(!isMinimal)
-                        } 
-
-                        if(window.innerWidth < 1023 && isNormal === true && isMinimal === false){
-                            setIsFull(!isFull)
-                        }
+                        setShowSidebar(!showSidebar)
                     }}
                 >
                     <div className="w-4 h-0.5 mb-1 bg-black"></div>
@@ -101,13 +84,8 @@ function Header({ isNormal, setIsNormal, isMinimal, setIsMinimal, isFull, setIsF
     )
 }
 
-Header.propTypes = {
-    isNormal: PropTypes.bool,
-    setIsNormal: PropTypes.func,
-    isMinimal: PropTypes.bool,
-    setIsMinimal: PropTypes.func,
-    isFull: PropTypes.bool,
-    setIsFull: PropTypes.func,
-    setSizeContent: PropTypes.func,
+HeaderWatch.propTypes = {
+    showSidebar: PropTypes.bool,
+    setShowSidebar: PropTypes.func,
 }
-export default Header
+export default HeaderWatch

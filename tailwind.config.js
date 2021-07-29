@@ -6,7 +6,9 @@ module.exports = {
         // Adds a new breakpoint in addition to the default breakpoints
         spacing: {
           'thumbnails-width' : '360px',
-          'thumbnails-height' : '480px'
+          'thumbnails-height' : '480px',
+          'youtube-ratio' : '56.25%',
+          '680px': '680px',
         }, 
   
         screens: {
@@ -24,9 +26,27 @@ module.exports = {
     
           'sm-max': {'max': '639px'},
           // => @media (max-width: 639px) { ... }
+
+          '1125px-max': {'max': '1125px'},
+          '985px-max': {'max': '985px'},
+        
         },
-  
+        
+        gridTemplateColumns: {
+          // Simple 16 column grid
+         '16': 'repeat(16, minmax(0, 1fr))',
+
+          // Complex site-specific column configuration
+         'footer': '200px minmax(900px, 1fr) 100px',
+        },
+
+        minWidth: {
+          '350px': '300px',
+          '680px': '750px',
+        },
+
         maxWidth: {
+          '900px': '900px'
         },
   
         maxHeight: {
@@ -34,8 +54,8 @@ module.exports = {
 
         letterSpacing: {
           youtube: '-.075em',
-        }
-
+        },
+        
       }, 
 
     },

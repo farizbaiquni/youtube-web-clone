@@ -1,18 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function SidebarFull({isNormal, setIsNormal, isFUll, setIsFull}) {
+function SidebarWatch({showSidebar, setShowSidebar}) {
     
     return (
         <div className={`flex fixed z-30 h-full overflow-x-hidden left-0
-        ${!isFUll ? "w-0" : "w-full"} 
-        transition-all ease-linear duration-100
+        ${!showSidebar ? "w-0" : "w-full"} 
+        transition-all ease-linear duration-150
         `
         }>
 
-            <div className="flex flex-col z-50 min-w-max pr-10 bg-white">
+            <div className="flex flex-col z-50 w-72 flex-none bg-white">
                 
-                <div className="w-full h-14 flex items-center cursor-pointer" onClick={() => {setIsNormal(true); setIsFull(false)}}>
+                <div className="w-full h-14 flex items-center cursor-pointer" onClick={() => {setShowSidebar(false);}}>
                     <div className="pl-8 mr-7">
                         <div className="w-4 h-0.5 mb-1 bg-black"></div>
                         <div className="w-4 h-0.5 mb-1 bg-black"></div>
@@ -20,7 +20,7 @@ function SidebarFull({isNormal, setIsNormal, isFUll, setIsFull}) {
                     </div>
 
                     <div className="flex">
-                        <img className="w-8 mr-2 object-contain" src="./youtube.png" alt="Youtube"/>
+                        <img className="w-8 mr-2 object-contain" src="/youtube.png" alt="Youtube"/>
                         <p className="text-xl font-semibold text">Youtube</p>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ function SidebarFull({isNormal, setIsNormal, isFUll, setIsFull}) {
             </div>
 
             <div className="w-full bg-black opacity-50" 
-                onClick={() => {setIsNormal(true); setIsFull(false)}}
+                onClick={() => {setShowSidebar(false);}}
             >
 
             </div>
@@ -60,11 +60,9 @@ function SidebarFull({isNormal, setIsNormal, isFUll, setIsFull}) {
     )
 }
 
-SidebarFull.propTypes = {
-    isNormal: PropTypes.bool.isRequired,
-    setIsNormal: PropTypes.func.isRequired,
-    isFUll: PropTypes.bool.isRequired,
-    setIsFull: PropTypes.func.isRequired,
+SidebarWatch.propTypes = {
+    showSidebar: PropTypes.bool.isRequired,
+    setShowSidebar: PropTypes.func.isRequired,
 }
 
-export default SidebarFull
+export default SidebarWatch
